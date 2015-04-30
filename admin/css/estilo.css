@@ -1,0 +1,18 @@
+body{
+	padding-top: 40px;
+}
+
+.form-login{
+	width: 300px;
+	height: 250px;
+	margin: 0 auto;
+}
+
+.form-login h1{
+	font-size: 25px;
+	text-align: center;
+}
+
+.form-login form{
+	margin: 0 0 0 40px;
+}

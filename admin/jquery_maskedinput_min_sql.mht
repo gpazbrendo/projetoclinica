@@ -1,0 +1,102 @@
+From: "Salvo pelo Windows Internet Explorer 10"
+Subject: 
+Date: Tue, 28 Apr 2015 08:07:56 -0300
+MIME-Version: 1.0
+Content-Type: text/html;
+	charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://raw.githubusercontent.com/digitalBush/jquery.maskedinput/1.4.0/dist/jquery.maskedinput.min.js
+X-MimeOLE: Produced By Microsoft MimeOLE V6.2.9200.17296
+
+=EF=BB=BF<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!DOCTYPE html PUBLIC "" ""><HTML><HEAD><META content=3D"IE=3D10.000"=20
+http-equiv=3D"X-UA-Compatible">
+
+<META http-equiv=3D"Content-Type" content=3D"text/html; =
+charset=3Dutf-8">
+<META name=3D"GENERATOR" content=3D"MSHTML 10.00.9200.17296"></HEAD>
+<BODY>
+<PRE>/*=0A=
+    jQuery Masked Input Plugin=0A=
+    Copyright (c) 2007 - 2014 Josh Bush (digitalbush.com)=0A=
+    Licensed under the MIT license =
+(http://digitalbush.com/projects/masked-input-plugin/#license)=0A=
+    Version: 1.4.0=0A=
+*/=0A=
+!function(a){"function"=3D=3Dtypeof =
+define&amp;&amp;define.amd?define(["jquery"],a):a("object"=3D=3Dtypeof =
+exports?require("jquery"):jQuery)}(function(a){var =
+b,c=3Dnavigator.userAgent,d=3D/iphone/i.test(c),e=3D/chrome/i.test(c),f=3D=
+/android/i.test(c);a.mask=3D{definitions:{9:"[0-9]",a:"[A-Za-z]","*":"[A-=
+Za-z0-9]"},autoclear:!0,dataName:"rawMaskFn",placeholder:"_"},a.fn.extend=
+({caret:function(a,b){var =
+c;if(0!=3D=3Dthis.length&amp;&amp;!this.is(":hidden"))return"number"=3D=3D=
+typeof a?(b=3D"number"=3D=3Dtypeof =
+b?b:a,this.each(function(){this.setSelectionRange?this.setSelectionRange(=
+a,b):this.createTextRange&amp;&amp;(c=3Dthis.createTextRange(),c.collapse=
+(!0),c.moveEnd("character",b),c.moveStart("character",a),c.select())})):(=
+this[0].setSelectionRange?(a=3Dthis[0].selectionStart,b=3Dthis[0].selecti=
+onEnd):document.selection&amp;&amp;document.selection.createRange&amp;&am=
+p;(c=3Ddocument.selection.createRange(),a=3D0-c.duplicate().moveStart("ch=
+aracter",-1e5),b=3Da+c.text.length),{begin:a,end:b})},unmask:function(){r=
+eturn this.trigger("unmask")},mask:function(c,g){var =
+h,i,j,k,l,m,n,o;if(!c&amp;&amp;this.length&gt;0){h=3Da(this[0]);var =
+p=3Dh.data(a.mask.dataName);return p?p():void 0}return =
+g=3Da.extend({autoclear:a.mask.autoclear,placeholder:a.mask.placeholder,c=
+ompleted:null},g),i=3Da.mask.definitions,j=3D[],k=3Dn=3Dc.length,l=3Dnull=
+,a.each(c.split(""),function(a,b){"?"=3D=3Db?(n--,k=3Da):i[b]?(j.push(new=
+ =
+RegExp(i[b])),null=3D=3D=3Dl&amp;&amp;(l=3Dj.length-1),k&gt;a&amp;&amp;(m=
+=3Dj.length-1)):j.push(null)}),this.trigger("unmask").each(function(){fun=
+ction h(){if(g.completed){for(var =
+a=3Dl;m&gt;=3Da;a++)if(j[a]&amp;&amp;C[a]=3D=3D=3Dp(a))return;g.completed=
+.call(B)}}function p(a){return =
+g.placeholder.charAt(a&lt;g.placeholder.length?a:0)}function =
+q(a){for(;++a&lt;n&amp;&amp;!j[a];);return a}function =
+r(a){for(;--a&gt;=3D0&amp;&amp;!j[a];);return a}function s(a,b){var =
+c,d;if(!(0&gt;a)){for(c=3Da,d=3Dq(b);n&gt;c;c++)if(j[c]){if(!(n&gt;d&amp;=
+&amp;j[c].test(C[d])))break;C[c]=3DC[d],C[d]=3Dp(d),d=3Dq(d)}z(),B.caret(=
+Math.max(l,a))}}function t(a){var =
+b,c,d,e;for(b=3Da,c=3Dp(a);n&gt;b;b++)if(j[b]){if(d=3Dq(b),e=3DC[b],C[b]=3D=
+c,!(n&gt;d&amp;&amp;j[d].test(e)))break;c=3De}}function u(){var =
+a=3DB.val(),b=3DB.caret();if(a.length&lt;o.length){for(A(!0);b.begin&gt;0=
+&amp;&amp;!j[b.begin-1];)b.begin--;if(0=3D=3D=3Db.begin)for(;b.begin&lt;l=
+&amp;&amp;!j[b.begin];)b.begin++;B.caret(b.begin,b.begin)}else{for(A(!0);=
+b.begin&lt;n&amp;&amp;!j[b.begin];)b.begin++;B.caret(b.begin,b.begin)}h()=
+}function v(){A(),B.val()!=3DE&amp;&amp;B.change()}function =
+w(a){if(!B.prop("readonly")){var =
+b,c,e,f=3Da.which||a.keyCode;o=3DB.val(),8=3D=3D=3Df||46=3D=3D=3Df||d&amp=
+;&amp;127=3D=3D=3Df?(b=3DB.caret(),c=3Db.begin,e=3Db.end,e-c=3D=3D=3D0&am=
+p;&amp;(c=3D46!=3D=3Df?r(c):e=3Dq(c-1),e=3D46=3D=3D=3Df?q(e):e),y(c,e),s(=
+c,e-1),a.preventDefault()):13=3D=3D=3Df?v.call(this,a):27=3D=3D=3Df&amp;&=
+amp;(B.val(E),B.caret(0,A()),a.preventDefault())}}function =
+x(b){if(!B.prop("readonly")){var =
+c,d,e,g=3Db.which||b.keyCode,i=3DB.caret();if(!(b.ctrlKey||b.altKey||b.me=
+taKey||32&gt;g)&amp;&amp;g&amp;&amp;13!=3D=3Dg){if(i.end-i.begin!=3D=3D0&=
+amp;&amp;(y(i.begin,i.end),s(i.begin,i.end-1)),c=3Dq(i.begin-1),n&gt;c&am=
+p;&amp;(d=3DString.fromCharCode(g),j[c].test(d))){if(t(c),C[c]=3Dd,z(),e=3D=
+q(c),f){var =
+k=3Dfunction(){a.proxy(a.fn.caret,B,e)()};setTimeout(k,0)}else =
+B.caret(e);i.begin&lt;=3Dm&amp;&amp;h()}b.preventDefault()}}}function =
+y(a,b){var =
+c;for(c=3Da;b&gt;c&amp;&amp;n&gt;c;c++)j[c]&amp;&amp;(C[c]=3Dp(c))}functi=
+on z(){B.val(C.join(""))}function A(a){var =
+b,c,d,e=3DB.val(),f=3D-1;for(b=3D0,d=3D0;n&gt;b;b++)if(j[b]){for(C[b]=3Dp=
+(b);d++&lt;e.length;)if(c=3De.charAt(d-1),j[b].test(c)){C[b]=3Dc,f=3Db;br=
+eak}if(d&gt;e.length){y(b+1,n);break}}else =
+C[b]=3D=3D=3De.charAt(d)&amp;&amp;d++,k&gt;b&amp;&amp;(f=3Db);return =
+a?z():k&gt;f+1?g.autoclear||C.join("")=3D=3D=3DD?(B.val()&amp;&amp;B.val(=
+""),y(0,n)):z():(z(),B.val(B.val().substring(0,f+1))),k?b:l}var =
+B=3Da(this),C=3Da.map(c.split(""),function(a,b){return"?"!=3Da?i[a]?p(b):=
+a:void =
+0}),D=3DC.join(""),E=3DB.val();B.data(a.mask.dataName,function(){return =
+a.map(C,function(a,b){return =
+j[b]&amp;&amp;a!=3Dp(b)?a:null}).join("")}),B.one("unmask",function(){B.o=
+ff(".mask").removeData(a.mask.dataName)}).on("focus.mask",function(){if(!=
+B.prop("readonly")){clearTimeout(b);var =
+a;E=3DB.val(),a=3DA(),b=3DsetTimeout(function(){z(),a=3D=3Dc.replace("?",=
+"").length?B.caret(0,a):B.caret(a)},10)}}).on("blur.mask",v).on("keydown.=
+mask",w).on("keypress.mask",x).on("input.mask =
+paste.mask",function(){B.prop("readonly")||setTimeout(function(){var =
+a=3DA(!0);B.caret(a),h()},0)}),e&amp;&amp;f&amp;&amp;B.off("input.mask").=
+on("input.mask",u),A()})}})});</PRE></BODY></HTML>
